@@ -1,1 +1,19 @@
-[{"ID":1,"Name":"Test","AbilityImage":{"mipmapCount":1,"format":10,"alphaIsTransparency":true,"width":600,"height":600,"dimension":2,"filterMode":1,"anisoLevel":1,"wrapMode":1,"wrapModeU":1,"wrapModeV":1,"wrapModeW":1,"mipMapBias":0.0,"texelSize":{"x":0.00166666671,"y":0.00166666671},"name":"Test","hideFlags":8},"Description":"This is an ability","Cooldown":1.0},{"ChannelTime":1.5,"ID":2,"Name":"Test2","AbilityImage":{"mipmapCount":1,"format":10,"alphaIsTransparency":true,"width":600,"height":600,"dimension":2,"filterMode":1,"anisoLevel":1,"wrapMode":1,"wrapModeU":1,"wrapModeV":1,"wrapModeW":1,"mipMapBias":0.0,"texelSize":{"x":0.00166666671,"y":0.00166666671},"name":"Test2","hideFlags":8},"Description":"This is an ability number 2","Cooldown":2.0}]
+[
+  {
+    "$type": "GenericAbility, Assembly-CSharp",
+    "ID": 1,
+    "Name": "Test",
+    "ImageFilePath": "Test",
+    "Description": "This is an ability",
+    "Cooldown": 1.0
+  },
+  {
+    "$type": "GenericChanneled, Assembly-CSharp",
+    "ChannelTime": 1.5,
+    "ID": 2,
+    "Name": "Test2",
+    "ImageFilePath": "Test2",
+    "Description": "This is an ability number 2",
+    "Cooldown": 2.0
+  }
+]

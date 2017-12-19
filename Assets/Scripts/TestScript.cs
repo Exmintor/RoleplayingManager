@@ -24,34 +24,24 @@ public class TestScript : MonoBehaviour
         newAbility = newAbility.Load<GenericAbility>(genericPath);
         newChanneled = newChanneled.Load<GenericChanneled>(channeledPath);
 
-        // Quite possibly the best solution is to use Json.net for all serialization
-        // TODO: Refactor the classes in order to reflect this
-        //string jsonPath = "Assets/SaveTest/AbilityList.json";
-        //List<Ability> jsonList = new List<Ability>();
-        //jsonList.Add(ability);
-        //jsonList.Add(channeled);
+        string jsonPath = "Assets/SaveTest/AbilityList.json";
+        List<Ability> jsonList = new List<Ability>();
+        jsonList.Add(ability);
+        jsonList.Add(channeled);
 
-        //string jsonListString = JsonConvert.SerializeObject(jsonList);
-        //File.WriteAllText(jsonPath, jsonListString);
+        JsonSerializerSettings settings = new JsonSerializerSettings();
+        settings.TypeNameHandling = TypeNameHandling.Objects;
+        settings.Formatting = Formatting.Indented;
 
-        //List<string> jsonList = new List<string>();
-        //string listPath = "Assets/SaveTest/AbilityList.json";
-        //jsonList.Add(ability.GetJsonString());
-        //jsonList.Add(channeled.GetJsonString());
-        //string completeJsonString = "";
+        string jsonListString = JsonConvert.SerializeObject(jsonList, settings);
+        File.WriteAllText(jsonPath, jsonListString);
 
-        //for (int i = 0; i < jsonList.Count; i++)
-        //{
-        //    if (i != jsonList.Count - 1)
-        //    {
-        //        completeJsonString += jsonList[i] + ",\n";
-        //    }
-        //    else
-        //    {
-        //        completeJsonString += jsonList[i];
-        //    }
-        //}
-        //File.WriteAllText(listPath, completeJsonString);
+        string jsonText = File.ReadAllText(jsonPath);
+        List<Ability> listToLoad = JsonConvert.DeserializeObject<List<Ability>>(jsonText, settings);
+        foreach(Ability listAbility in listToLoad)
+        {
+            listAbility.RefreshImage();
+        }
     }
 	
 }

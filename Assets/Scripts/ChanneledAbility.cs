@@ -8,7 +8,6 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
-[Serializable]
 public abstract class ChanneledAbility : Ability, IChanneledAbility
 {
     public float ChannelTime { get; protected set; }
