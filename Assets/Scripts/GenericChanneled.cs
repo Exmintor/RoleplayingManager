@@ -19,6 +19,11 @@ public class GenericChanneled : ChanneledAbility
         ChannelTime = 1.5f;
     }
 
+    public void AlternateParameters()
+    {
+        ChannelTime = 5.5f;
+    }
+
     public override void Cast()
     {
         throw new NotImplementedException();

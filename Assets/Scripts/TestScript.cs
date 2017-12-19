@@ -18,18 +18,21 @@ public class TestScript : MonoBehaviour
         ability.Save(genericPath);
         channeled.Save(channeledPath);
 
-        ability = ability.Load<GenericAbility>(genericPath);
-        channeled = channeled.Load<GenericChanneled>(channeledPath);
+        GenericAbility newAbility = new GenericAbility();
+        GenericChanneled newChanneled = new GenericChanneled();
+
+        newAbility = newAbility.Load<GenericAbility>(genericPath);
+        newChanneled = newChanneled.Load<GenericChanneled>(channeledPath);
 
         // Quite possibly the best solution is to use Json.net for all serialization
         // TODO: Refactor the classes in order to reflect this
-        string jsonPath = "Assets/SaveTest/AbilityList.json";
-        List<Ability> jsonList = new List<Ability>();
-        jsonList.Add(ability);
-        jsonList.Add(channeled);
+        //string jsonPath = "Assets/SaveTest/AbilityList.json";
+        //List<Ability> jsonList = new List<Ability>();
+        //jsonList.Add(ability);
+        //jsonList.Add(channeled);
 
-        string jsonListString = JsonConvert.SerializeObject(jsonList);
-        File.WriteAllText(jsonPath, jsonListString);
+        //string jsonListString = JsonConvert.SerializeObject(jsonList);
+        //File.WriteAllText(jsonPath, jsonListString);
 
         //List<string> jsonList = new List<string>();
         //string listPath = "Assets/SaveTest/AbilityList.json";

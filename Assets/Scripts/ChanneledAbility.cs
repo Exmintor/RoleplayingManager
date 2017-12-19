@@ -11,19 +11,7 @@ using UnityEngine.UI;
 [Serializable]
 public abstract class ChanneledAbility : Ability, IChanneledAbility
 {
-    [SerializeField, HideInInspector]
-    private float channelTime;
-    public float ChannelTime
-    {
-        get
-        {
-            return channelTime;
-        }
-        protected set
-        {
-            channelTime = value;
-        }
-    }
+    public float ChannelTime { get; protected set; }
 
     public override abstract void Cast();
 }

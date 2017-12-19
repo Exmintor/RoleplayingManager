@@ -18,6 +18,14 @@ public class GenericAbility : Ability
         Cooldown = 1.0f;
     }
 	
+    public void AlternateParameters()
+    {
+        ID = 3;
+        Name = "Test3";
+        imageFilePath = "Test3";
+        Description = "This is an ability3";
+        Cooldown = 3.0f;
+    }
     public override void Cast()
     {
         throw new NotImplementedException();
