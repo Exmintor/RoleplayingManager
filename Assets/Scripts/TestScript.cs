@@ -9,39 +9,39 @@ public class TestScript : MonoBehaviour
     // Use this for initialization
     void Start ()
     {
-        GenericAbility ability = new GenericAbility();
-        GenericChanneled channeled = new GenericChanneled();
+        //GenericAbility ability = new GenericAbility();
+        //GenericChanneled channeled = new GenericChanneled();
 
-        string genericPath = "Assets/SaveTest/Generic.json";
-        string channeledPath = "Assets/SaveTest/Channeled.json";
+        //string genericPath = "Assets/SaveTest/Generic.json";
+        //string channeledPath = "Assets/SaveTest/Channeled.json";
 
-        ability.Save(genericPath);
-        channeled.Save(channeledPath);
+        //ability.Save(genericPath);
+        //channeled.Save(channeledPath);
 
-        GenericAbility newAbility = new GenericAbility();
-        GenericChanneled newChanneled = new GenericChanneled();
+        //GenericAbility newAbility = new GenericAbility();
+        //GenericChanneled newChanneled = new GenericChanneled();
 
-        newAbility = newAbility.Load<GenericAbility>(genericPath);
-        newChanneled = newChanneled.Load<GenericChanneled>(channeledPath);
+        //newAbility = newAbility.Load<GenericAbility>(genericPath);
+        //newChanneled = newChanneled.Load<GenericChanneled>(channeledPath);
 
-        string jsonPath = "Assets/SaveTest/AbilityList.json";
-        List<Ability> jsonList = new List<Ability>();
-        jsonList.Add(ability);
-        jsonList.Add(channeled);
+        //string jsonPath = "Assets/SaveTest/AbilityList.json";
+        //List<Ability> jsonList = new List<Ability>();
+        //jsonList.Add(ability);
+        //jsonList.Add(channeled);
 
-        JsonSerializerSettings settings = new JsonSerializerSettings();
-        settings.TypeNameHandling = TypeNameHandling.Objects;
-        settings.Formatting = Formatting.Indented;
+        //JsonSerializerSettings settings = new JsonSerializerSettings();
+        //settings.TypeNameHandling = TypeNameHandling.Objects;
+        //settings.Formatting = Formatting.Indented;
 
-        string jsonListString = JsonConvert.SerializeObject(jsonList, settings);
-        File.WriteAllText(jsonPath, jsonListString);
+        //string jsonListString = JsonConvert.SerializeObject(jsonList, settings);
+        //File.WriteAllText(jsonPath, jsonListString);
 
-        string jsonText = File.ReadAllText(jsonPath);
-        List<Ability> listToLoad = JsonConvert.DeserializeObject<List<Ability>>(jsonText, settings);
-        foreach(Ability listAbility in listToLoad)
-        {
-            listAbility.RefreshImage();
-        }
+        //string jsonText = File.ReadAllText(jsonPath);
+        //List<Ability> listToLoad = JsonConvert.DeserializeObject<List<Ability>>(jsonText, settings);
+        //foreach(Ability listAbility in listToLoad)
+        //{
+        //    listAbility.RefreshImage();
+        //}
     }
 	
 }
