@@ -11,10 +11,10 @@ public class GenericAbility : Ability
     public GenericAbility()
     {
         ID = 1;
-        Name = "Test";
-        ImageFilePath = "Test";
-        Description = "This is an ability";
-        Cooldown = 1.0f;
+        Name = "GenericAbility";
+        ImageFilePath = "GenericAbility";
+        Description = "This is a generic ability";
+        Cooldown = 0.0f;
     }
 	
     public override void Cast()

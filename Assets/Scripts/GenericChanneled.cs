@@ -10,12 +10,12 @@ public class GenericChanneled : ChanneledAbility
 {
     public GenericChanneled()
     {
-        ID = 2;
-        Name = "Test2";
-        ImageFilePath = "Test2";
-        Description = "This is a second ability";
-        Cooldown = 2.0f;
-        ChannelTime = 1.0f;
+        ID = 100;
+        Name = "GenericChanneled";
+        ImageFilePath = "GenericChanneled";
+        Description = "This is a generic channeled ability";
+        Cooldown = 0.0f;
+        ChannelTime = 0.0f;
     }
 
     public override void Cast()

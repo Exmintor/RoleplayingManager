@@ -51,6 +51,7 @@ public class AbilityList
     public void Add(Ability ability)
     {
         Abilities.Add(ability);
+        Abilities = (List<Ability>)Abilities.OrderBy(abil => abil.ID);
         Save(FilePath);
     }
     public Ability Remove(int index)
@@ -65,6 +66,44 @@ public class AbilityList
         else
         {
             return null;
+        }
+    }
+
+    public Ability GetAbilityFromList<T>(string name) where T:Ability
+    {
+        var ability = from abil in Abilities where abil.Name == name select abil;
+        Ability thisAbility = ability.SingleOrDefault();
+        string abilityJson = thisAbility.GetJsonString();
+
+        return AbilityFromJson<T>(abilityJson);
+    }
+    public Ability GetAbilityFromList<T>(int ID) where T:Ability
+    {
+        var ability = from abil in Abilities where abil.ID == ID select abil;
+        Ability thisAbility = ability.SingleOrDefault();
+        string abilityJson = thisAbility.GetJsonString();
+
+        return AbilityFromJson<T>(abilityJson);
+    }
+    private T AbilityFromJson<T>(string jsonString)
+    {
+        JsonSerializerSettings settings = new JsonSerializerSettings();
+        settings.TypeNameHandling = TypeNameHandling.Objects;
+        settings.Formatting = Formatting.Indented;
+        T newAbility = JsonConvert.DeserializeObject<T>(jsonString, settings);
+        return newAbility;
+    }
+
+    public Ability GetAbilityByName(string abilityName)
+    {
+        switch(abilityName)
+        {
+            case "GenericAbility":
+                return new GenericAbility();
+            case "GenericChanneled":
+                return new GenericChanneled();
+            default:
+                return new GenericAbility();
         }
     }
 }

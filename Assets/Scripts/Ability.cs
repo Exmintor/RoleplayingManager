@@ -52,5 +52,9 @@ public abstract class Ability : IAbility
     public void RefreshImage()
     {
         AbilityImage = Resources.Load(ImageFilePath) as Texture2D;
+        if(AbilityImage == null)
+        {
+            AbilityImage = Resources.Load("Default") as Texture2D;
+        }
     }
 }
