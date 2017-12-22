@@ -1,8 +1,8 @@
 {
   "$type": "GenericAbility, Assembly-CSharp",
   "ID": 1,
-  "Name": "Test",
-  "ImageFilePath": "Test",
-  "Description": "This is an ability",
-  "Cooldown": 1.0
+  "Name": "GenericAbility",
+  "ImageFilePath": "GenericAbility",
+  "Description": "This is a generic ability",
+  "Cooldown": 0.0
 }

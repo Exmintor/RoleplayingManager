@@ -5,6 +5,7 @@ using Newtonsoft.Json;
 using System.IO;
 using System.Linq;
 
+public enum AbilityEnum { GenericAbility, GenericChanneled }
 public class AbilityList
 {
     public List<Ability> Abilities { get; private set; }
@@ -28,10 +29,11 @@ public class AbilityList
     }
     public List<Ability> Load(string filePath)
     {
+        string jsonString = File.ReadAllText(filePath);
         JsonSerializerSettings settings = new JsonSerializerSettings();
         settings.TypeNameHandling = TypeNameHandling.Objects;
         settings.Formatting = Formatting.Indented;
-        List<Ability> abilities = JsonConvert.DeserializeObject<List<Ability>>(filePath, settings);
+        List<Ability> abilities = JsonConvert.DeserializeObject<List<Ability>>(jsonString, settings);
         foreach (Ability instance in abilities)
         {
             instance.RefreshImage();
@@ -69,41 +71,59 @@ public class AbilityList
         }
     }
 
-    public Ability GetAbilityFromList<T>(string name) where T:Ability
+    public Ability GetAbilityFromList(AbilityEnum ability)
+    {
+        Ability toReturn = GetAbilityFromList(GetAbilityNameByEnum(ability));
+        return toReturn;
+    }
+    public Ability GetAbilityFromList(string name)
     {
         var ability = from abil in Abilities where abil.Name == name select abil;
         Ability thisAbility = ability.SingleOrDefault();
         string abilityJson = thisAbility.GetJsonString();
 
-        return AbilityFromJson<T>(abilityJson);
+        return AbilityFromJson(abilityJson);
     }
-    public Ability GetAbilityFromList<T>(int ID) where T:Ability
+    public Ability GetAbilityFromList(int ID)
     {
         var ability = from abil in Abilities where abil.ID == ID select abil;
         Ability thisAbility = ability.SingleOrDefault();
         string abilityJson = thisAbility.GetJsonString();
 
-        return AbilityFromJson<T>(abilityJson);
+        return AbilityFromJson(abilityJson);
     }
-    private T AbilityFromJson<T>(string jsonString)
+    private Ability AbilityFromJson(string jsonString)
     {
         JsonSerializerSettings settings = new JsonSerializerSettings();
         settings.TypeNameHandling = TypeNameHandling.Objects;
         settings.Formatting = Formatting.Indented;
-        T newAbility = JsonConvert.DeserializeObject<T>(jsonString, settings);
+        Ability newAbility = JsonConvert.DeserializeObject<Ability>(jsonString, settings);
         return newAbility;
     }
 
-    public Ability GetAbilityByName(string abilityName)
+    private string GetAbilityNameByEnum(AbilityEnum ability)
     {
-        switch(abilityName)
+        switch(ability)
         {
-            case "GenericAbility":
-                return new GenericAbility();
-            case "GenericChanneled":
-                return new GenericChanneled();
+            case AbilityEnum.GenericAbility:
+                return "GenericAbility";
+            case AbilityEnum.GenericChanneled:
+                return "GenericChanneled";
             default:
-                return new GenericAbility();
+                return "GenericAbility";
         }
     }
+
+    //public Ability GetAbilityByName(string abilityName)
+    //{
+    //    switch(abilityName)
+    //    {
+    //        case "GenericAbility":
+    //            return new GenericAbility();
+    //        case "GenericChanneled":
+    //            return new GenericChanneled();
+    //        default:
+    //            return new GenericAbility();
+    //    }
+    //}
 }
