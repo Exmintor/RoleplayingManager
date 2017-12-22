@@ -14,7 +14,19 @@ public abstract class Ability : IAbility
 
     public string Name { get; protected set; }
 
-    public string ImageFilePath { get; protected set; }
+    private string imageFilePath;
+    public string ImageFilePath
+    {
+        get
+        {
+            return imageFilePath;
+        }
+        protected set
+        {
+            imageFilePath = value;
+            RefreshImage();
+        }
+    }
 
     [JsonIgnore]
     public Texture2D AbilityImage { get; private set; }
@@ -27,7 +39,6 @@ public abstract class Ability : IAbility
 
     public virtual void Save(string filePath)
     {
-        RefreshImage();
         string abilityJson = GetJsonString();
         File.WriteAllText(filePath, abilityJson);
     }
@@ -36,7 +47,6 @@ public abstract class Ability : IAbility
     {
         string abilityJson = File.ReadAllText(filePath);
         T newAbility = JsonConvert.DeserializeObject<T>(abilityJson);
-        newAbility.RefreshImage();
         return newAbility;
     }
 
@@ -49,7 +59,7 @@ public abstract class Ability : IAbility
         return abilityJson;
     }
 
-    public void RefreshImage()
+    private void RefreshImage()
     {
         AbilityImage = Resources.Load(ImageFilePath) as Texture2D;
         if(AbilityImage == null)

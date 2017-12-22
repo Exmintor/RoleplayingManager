@@ -9,6 +9,7 @@ public class TestScript : MonoBehaviour
     // Use this for initialization
     void Start ()
     {
+        AbilityList list = new AbilityList();
         //GenericAbility ability = new GenericAbility();
         //GenericChanneled channeled = new GenericChanneled();
 

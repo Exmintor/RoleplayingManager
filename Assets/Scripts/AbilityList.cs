@@ -4,6 +4,8 @@ using UnityEngine;
 using Newtonsoft.Json;
 using System.IO;
 using System.Linq;
+using System;
+using System.Reflection;
 
 public enum AbilityEnum { GenericAbility, GenericChanneled }
 public class AbilityList
@@ -18,38 +20,18 @@ public class AbilityList
 
     public AbilityList(string filePath)
     {
-        FilePath = filePath;
+        FilePath = Path.Combine(GetRelativePath(), filePath);
         Abilities = Load(FilePath);
     }
 
-    public List<Ability> Load()
+    private string GetRelativePath()
     {
-        List<Ability> abilities = Load(FilePath);
-        return abilities;
+        string relativePath = Assembly.GetExecutingAssembly().Location;
+        relativePath = Path.GetDirectoryName(relativePath);
+        relativePath = Directory.GetParent(relativePath).FullName;
+        relativePath = Directory.GetParent(relativePath).FullName;
+        return relativePath;
     }
-    public List<Ability> Load(string filePath)
-    {
-        string jsonString = File.ReadAllText(filePath);
-        JsonSerializerSettings settings = new JsonSerializerSettings();
-        settings.TypeNameHandling = TypeNameHandling.Objects;
-        settings.Formatting = Formatting.Indented;
-        List<Ability> abilities = JsonConvert.DeserializeObject<List<Ability>>(jsonString, settings);
-        foreach (Ability instance in abilities)
-        {
-            instance.RefreshImage();
-        }
-        return abilities;
-    }
-
-    private void Save(string filePath)
-    {
-        JsonSerializerSettings settings = new JsonSerializerSettings();
-        settings.TypeNameHandling = TypeNameHandling.Objects;
-        settings.Formatting = Formatting.Indented;
-        string jsonString = JsonConvert.SerializeObject(Abilities, settings);
-        File.WriteAllText(filePath, jsonString);
-    }
-
     public void Add(Ability ability)
     {
         Abilities.Add(ability);
@@ -58,7 +40,7 @@ public class AbilityList
     }
     public Ability Remove(int index)
     {
-        if(Abilities.Count > index)
+        if (Abilities.Count > index)
         {
             Ability toReturn = Abilities.ElementAt(index);
             Abilities.RemoveAt(index);
@@ -101,6 +83,30 @@ public class AbilityList
         return newAbility;
     }
 
+    public List<Ability> Load()
+    {
+        List<Ability> abilities = Load(FilePath);
+        return abilities;
+    }
+    public List<Ability> Load(string filePath)
+    {
+        string jsonString = File.ReadAllText(filePath);
+        JsonSerializerSettings settings = new JsonSerializerSettings();
+        settings.TypeNameHandling = TypeNameHandling.Objects;
+        settings.Formatting = Formatting.Indented;
+        List<Ability> abilities = JsonConvert.DeserializeObject<List<Ability>>(jsonString, settings);
+        return abilities;
+    }
+
+    private void Save(string filePath)
+    {
+        JsonSerializerSettings settings = new JsonSerializerSettings();
+        settings.TypeNameHandling = TypeNameHandling.Objects;
+        settings.Formatting = Formatting.Indented;
+        string jsonString = JsonConvert.SerializeObject(Abilities, settings);
+        File.WriteAllText(filePath, jsonString);
+    }
+
     private string GetAbilityNameByEnum(AbilityEnum ability)
     {
         switch(ability)
@@ -114,16 +120,16 @@ public class AbilityList
         }
     }
 
-    //public Ability GetAbilityByName(string abilityName)
-    //{
-    //    switch(abilityName)
-    //    {
-    //        case "GenericAbility":
-    //            return new GenericAbility();
-    //        case "GenericChanneled":
-    //            return new GenericChanneled();
-    //        default:
-    //            return new GenericAbility();
-    //    }
-    //}
+    public static Ability GetAbilityByName(string abilityName)
+    {
+        switch (abilityName)
+        {
+            case "GenericAbility":
+                return new GenericAbility();
+            case "GenericChanneled":
+                return new GenericChanneled();
+            default:
+                return new GenericAbility();
+        }
+    }
 }
