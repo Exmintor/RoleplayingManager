@@ -20,17 +20,8 @@ public class AbilityList
 
     public AbilityList(string filePath)
     {
-        FilePath = Path.Combine(GetRelativePath(), filePath);
+        FilePath = filePath;
         Abilities = Load(FilePath);
-    }
-
-    private string GetRelativePath()
-    {
-        string relativePath = Assembly.GetExecutingAssembly().Location;
-        relativePath = Path.GetDirectoryName(relativePath);
-        relativePath = Directory.GetParent(relativePath).FullName;
-        relativePath = Directory.GetParent(relativePath).FullName;
-        return relativePath;
     }
     public void Add(Ability ability)
     {
