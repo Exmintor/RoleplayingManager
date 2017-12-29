@@ -13,6 +13,7 @@ public class AbilityDesigner : MonoBehaviour, INotifyPropertyChanged
     [SerializeField]
     private Transform abilityListPanel;
 
+    private List<GameObject> prefabList;
     private AbilityList list;
     private Ability currentSelected;
     public Ability CurrentSelected
@@ -131,10 +132,24 @@ public class AbilityDesigner : MonoBehaviour, INotifyPropertyChanged
 	// Use this for initialization
 	void Start ()
     {
+        prefabList = new List<GameObject>();
         list = new AbilityList();
         InitializeMenuItems();
 	}
 
+    private void RefreshMenuItems()
+    {
+        DeleteMenuItems();
+        InitializeMenuItems();
+    }
+    private void DeleteMenuItems()
+    {
+        foreach(GameObject prefab in prefabList)
+        {
+            Destroy(prefab);
+        }
+        prefabList.Clear();
+    }
     private void InitializeMenuItems()
     {
         foreach(Ability abil in list.Abilities)
@@ -148,6 +163,7 @@ public class AbilityDesigner : MonoBehaviour, INotifyPropertyChanged
                 newAbility.GetComponent<Image>().sprite = Sprite.Create(image, new Rect(0, 0, image.width, image.height), new Vector2(0.5f, 0.5f));
             }
             newAbility.GetComponent<AbilityDesignerItem>().AbilityRepresented = abil;
+            prefabList.Add(newAbility);
         }
     }
 
@@ -172,5 +188,21 @@ public class AbilityDesigner : MonoBehaviour, INotifyPropertyChanged
         {
             PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
         }
+    }
+
+    [Binding]
+    public void AddNewAbility()
+    {
+        GenericAbility ability = new GenericAbility();
+        list.Add(ability);
+        list.Save();
+        RefreshMenuItems();
+    }
+    [Binding]
+    public void RemoveAbility()
+    {
+        list.Abilities.Remove(CurrentSelected);
+        list.Save();
+        RefreshMenuItems();
     }
 }

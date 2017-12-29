@@ -26,7 +26,7 @@ public class AbilityList
     public void Add(Ability ability)
     {
         Abilities.Add(ability);
-        Abilities = (List<Ability>)Abilities.OrderBy(abil => abil.ID);
+        Abilities = Abilities.OrderBy(abil => abil.ID).ToList();
         Save(FilePath);
     }
     public Ability Remove(int index)
