@@ -89,6 +89,11 @@ public class AbilityList
         return abilities;
     }
 
+
+    public void Save()
+    {
+        Save(FilePath);
+    }
     private void Save(string filePath)
     {
         JsonSerializerSettings settings = new JsonSerializerSettings();

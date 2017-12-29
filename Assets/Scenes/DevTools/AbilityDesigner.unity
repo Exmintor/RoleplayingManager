@@ -430,7 +430,7 @@ MonoBehaviour:
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 0
-    m_HorizontalOverflow: 1
+    m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 
@@ -521,6 +521,7 @@ GameObject:
   - component: {fileID: 426181320}
   - component: {fileID: 426181319}
   - component: {fileID: 426181318}
+  - component: {fileID: 426181321}
   m_Layer: 5
   m_Name: DescriptionInput
   m_TagString: Untagged
@@ -545,8 +546,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 155.00012, y: -122.7}
-  m_SizeDelta: {x: 549.9, y: 238.7}
+  m_AnchoredPosition: {x: 155.00012, y: -228.8}
+  m_SizeDelta: {x: 549.9, y: 450.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &426181318
 MonoBehaviour:
@@ -590,7 +591,7 @@ MonoBehaviour:
   m_InputType: 0
   m_AsteriskChar: 42
   m_KeyboardType: 0
-  m_LineType: 0
+  m_LineType: 1
   m_HideMobileInput: 0
   m_CharacterValidation: 0
   m_CharacterLimit: 0
@@ -644,6 +645,27 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 426181316}
+--- !u!114 &426181321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 426181316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f949dd6e4c9669149be57a96eed032cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  viewModelPropertyName: AbilityDesigner.DescriptionText
+  viewEventName: UnityEngine.UI.InputField.onValueChanged
+  viewPropertyName: UnityEngine.UI.InputField.text
+  viewAdapterTypeName: 
+  viewAdapterOptions: {fileID: 0}
+  viewModelAdapterTypeName: 
+  viewModelAdapterOptions: {fileID: 0}
+  exceptionPropertyName: 
+  exceptionAdapterTypeName: 
+  exceptionAdapterOptions: {fileID: 0}
 --- !u!1 &452764297
 GameObject:
   m_ObjectHideFlags: 0
@@ -803,6 +825,7 @@ GameObject:
   - component: {fileID: 502539970}
   - component: {fileID: 502539969}
   - component: {fileID: 502539968}
+  - component: {fileID: 502539971}
   m_Layer: 5
   m_Name: CooldownInput
   m_TagString: Untagged
@@ -926,6 +949,27 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 502539966}
+--- !u!114 &502539971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 502539966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f949dd6e4c9669149be57a96eed032cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  viewModelPropertyName: AbilityDesigner.CooldownText
+  viewEventName: UnityEngine.UI.InputField.onEndEdit
+  viewPropertyName: UnityEngine.UI.InputField.text
+  viewAdapterTypeName: UnityWeld.Binding.Adapters.FloatToStringAdapter
+  viewAdapterOptions: {fileID: 0}
+  viewModelAdapterTypeName: UnityWeld.Binding.Adapters.StringToFloatAdapter
+  viewModelAdapterOptions: {fileID: 0}
+  exceptionPropertyName: 
+  exceptionAdapterTypeName: 
+  exceptionAdapterOptions: {fileID: 0}
 --- !u!1 &571514326
 GameObject:
   m_ObjectHideFlags: 0
@@ -1381,6 +1425,7 @@ GameObject:
   - component: {fileID: 1046759898}
   - component: {fileID: 1046759897}
   - component: {fileID: 1046759896}
+  - component: {fileID: 1046759899}
   m_Layer: 5
   m_Name: ImagePathInput
   m_TagString: Untagged
@@ -1504,6 +1549,27 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1046759894}
+--- !u!114 &1046759899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1046759894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f949dd6e4c9669149be57a96eed032cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  viewModelPropertyName: AbilityDesigner.ImagePathText
+  viewEventName: UnityEngine.UI.InputField.onValueChanged
+  viewPropertyName: UnityEngine.UI.InputField.text
+  viewAdapterTypeName: 
+  viewAdapterOptions: {fileID: 0}
+  viewModelAdapterTypeName: 
+  viewModelAdapterOptions: {fileID: 0}
+  exceptionPropertyName: 
+  exceptionAdapterTypeName: 
+  exceptionAdapterOptions: {fileID: 0}
 --- !u!1 &1149276667
 GameObject:
   m_ObjectHideFlags: 0
@@ -1914,6 +1980,7 @@ GameObject:
   - component: {fileID: 1612553894}
   - component: {fileID: 1612553893}
   - component: {fileID: 1612553892}
+  - component: {fileID: 1612553895}
   m_Layer: 5
   m_Name: IDInput
   m_TagString: Untagged
@@ -2037,6 +2104,27 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1612553890}
+--- !u!114 &1612553895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1612553890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f949dd6e4c9669149be57a96eed032cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  viewModelPropertyName: AbilityDesigner.IDText
+  viewEventName: UnityEngine.UI.InputField.onValueChanged
+  viewPropertyName: UnityEngine.UI.InputField.text
+  viewAdapterTypeName: UnityWeld.Binding.Adapters.IntToStringAdapter
+  viewAdapterOptions: {fileID: 0}
+  viewModelAdapterTypeName: UnityWeld.Binding.Adapters.StringToIntAdapter
+  viewModelAdapterOptions: {fileID: 0}
+  exceptionPropertyName: 
+  exceptionAdapterTypeName: 
+  exceptionAdapterOptions: {fileID: 0}
 --- !u!1 &1652690256
 GameObject:
   m_ObjectHideFlags: 0
@@ -2048,6 +2136,7 @@ GameObject:
   - component: {fileID: 1652690260}
   - component: {fileID: 1652690259}
   - component: {fileID: 1652690258}
+  - component: {fileID: 1652690261}
   m_Layer: 5
   m_Name: NameInput
   m_TagString: Untagged
@@ -2171,6 +2260,27 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1652690256}
+--- !u!114 &1652690261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1652690256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f949dd6e4c9669149be57a96eed032cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  viewModelPropertyName: AbilityDesigner.NameText
+  viewEventName: UnityEngine.UI.InputField.onValueChanged
+  viewPropertyName: UnityEngine.UI.InputField.text
+  viewAdapterTypeName: 
+  viewAdapterOptions: {fileID: 0}
+  viewModelAdapterTypeName: 
+  viewModelAdapterOptions: {fileID: 0}
+  exceptionPropertyName: 
+  exceptionAdapterTypeName: 
+  exceptionAdapterOptions: {fileID: 0}
 --- !u!1 &1701334895
 GameObject:
   m_ObjectHideFlags: 0

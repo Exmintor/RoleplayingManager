@@ -16,6 +16,6 @@ public class AbilityDesignerItem : MonoBehaviour
 
     public void AbilityWasClicked()
     {
-        designer.UpdateEditFields();
+        designer.UpdateDesignerSelected(this.AbilityRepresented);
     }
 }

@@ -10,9 +10,9 @@ using Newtonsoft.Json;
 
 public abstract class Ability : IAbility
 {
-    public int ID { get; protected set; }
+    public int ID { get; set; }
 
-    public string Name { get; protected set; }
+    public string Name { get; set; }
 
     private string imageFilePath;
     public string ImageFilePath
@@ -21,7 +21,7 @@ public abstract class Ability : IAbility
         {
             return imageFilePath;
         }
-        protected set
+        set
         {
             imageFilePath = value;
             RefreshImage();
@@ -31,9 +31,9 @@ public abstract class Ability : IAbility
     [JsonIgnore]
     public Texture2D AbilityImage { get; private set; }
 
-    public string Description { get; protected set; }
+    public string Description { get; set; }
 
-    public float Cooldown { get; protected set; }
+    public float Cooldown { get; set; }
 
     public abstract void Cast();
 
