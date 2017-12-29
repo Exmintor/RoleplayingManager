@@ -1966,7 +1966,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8eb2db0e9d25c24aaeb1dea62383af8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  abilityPrefab: {fileID: 1077452360090206, guid: 55e599cff5ca3c140ba8652db1524eb4,
+  abilityPrefab: {fileID: 1197003803135320, guid: 0fb75e13ffef59c429c37d3bbf956a86,
     type: 2}
   abilityListPanel: {fileID: 7378962}
 --- !u!1 &1612553890

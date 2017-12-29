@@ -28,6 +28,8 @@ public class AbilityDesigner : MonoBehaviour, INotifyPropertyChanged
         }
     }
 
+    private AbilityDesignerItem currentPrefabSelected;
+
     private int idText;
     [Binding]
     public int IDText
@@ -62,6 +64,7 @@ public class AbilityDesigner : MonoBehaviour, INotifyPropertyChanged
             {
                 CurrentSelected.Name = nameText;
                 list.Save();
+                currentPrefabSelected.RefreshName();
             }
             OnPropertyChanged("NameText");
         }
@@ -81,6 +84,7 @@ public class AbilityDesigner : MonoBehaviour, INotifyPropertyChanged
             {
                 CurrentSelected.ImageFilePath = imagePathText;
                 list.Save();
+                currentPrefabSelected.RefreshImage();
             }
             OnPropertyChanged("ImagePathText");
         }
@@ -138,13 +142,19 @@ public class AbilityDesigner : MonoBehaviour, INotifyPropertyChanged
             GameObject newAbility = Instantiate(abilityPrefab, abilityListPanel) as GameObject;
             newAbility.GetComponent<Toggle>().group = abilityListPanel.GetComponent<ToggleGroup>();
             newAbility.GetComponentInChildren<Text>().text = abil.Name;
+            if(abil.AbilityImage != null)
+            {
+                Texture2D image = abil.AbilityImage;
+                newAbility.GetComponent<Image>().sprite = Sprite.Create(image, new Rect(0, 0, image.width, image.height), new Vector2(0.5f, 0.5f));
+            }
             newAbility.GetComponent<AbilityDesignerItem>().AbilityRepresented = abil;
         }
     }
 
-    public void UpdateDesignerSelected(Ability ability)
+    public void UpdateDesignerSelected(AbilityDesignerItem currentPrefab, Ability ability)
     {
         CurrentSelected = ability;
+        currentPrefabSelected = currentPrefab;
     }
 
     private void UpdateAllProperties()
