@@ -13,7 +13,7 @@ public class AbilityList
     public List<Ability> Abilities { get; private set; }
     public string FilePath { get; private set; }
 
-    public AbilityList() : this("Assets/SaveTest/AbilityList.json")
+    public AbilityList() : this("Assets/Json/AbilityList.json")
     {
 
     }

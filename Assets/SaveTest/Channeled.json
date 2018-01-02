@@ -1,9 +1,0 @@
-{
-  "$type": "GenericChanneled, Assembly-CSharp",
-  "ChannelTime": 0.0,
-  "ID": 100,
-  "Name": "GenericChanneled",
-  "ImageFilePath": "GenericChanneled",
-  "Description": "This is a generic channeled ability",
-  "Cooldown": 0.0
-}
