@@ -656,7 +656,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f949dd6e4c9669149be57a96eed032cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  viewModelPropertyName: AbilityDesigner.DescriptionText
+  viewModelPropertyName: AbilityListViewModel.DescriptionText
   viewEventName: UnityEngine.UI.InputField.onValueChanged
   viewPropertyName: UnityEngine.UI.InputField.text
   viewAdapterTypeName: 
@@ -995,7 +995,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f949dd6e4c9669149be57a96eed032cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  viewModelPropertyName: AbilityDesigner.CooldownText
+  viewModelPropertyName: AbilityListViewModel.CooldownText
   viewEventName: UnityEngine.UI.InputField.onEndEdit
   viewPropertyName: UnityEngine.UI.InputField.text
   viewAdapterTypeName: UnityWeld.Binding.Adapters.FloatToStringAdapter
@@ -1669,7 +1669,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f949dd6e4c9669149be57a96eed032cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  viewModelPropertyName: AbilityDesigner.ImagePathText
+  viewModelPropertyName: AbilityListViewModel.ImagePathText
   viewEventName: UnityEngine.UI.InputField.onValueChanged
   viewPropertyName: UnityEngine.UI.InputField.text
   viewAdapterTypeName: 
@@ -1882,7 +1882,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffb4c79f31e0a234aa7e489b33e1783b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  viewModelMethodName: AbilityDesigner.RemoveAbility
+  viewModelMethodName: AbilityListViewModel.RemoveAbility
   viewEventName: UnityEngine.UI.Button.onClick
 --- !u!1 &1205517750
 GameObject:
@@ -2197,12 +2197,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1336664935}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8eb2db0e9d25c24aaeb1dea62383af8, type: 3}
+  m_Script: {fileID: 11500000, guid: 1a0852a8c101c3c4a8c7f016481a2bcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  abilityPrefab: {fileID: 1197003803135320, guid: 0fb75e13ffef59c429c37d3bbf956a86,
-    type: 2}
-  abilityListPanel: {fileID: 7378962}
+  viewer: {fileID: 1625793310}
 --- !u!1 &1612553890
 GameObject:
   m_ObjectHideFlags: 0
@@ -2349,7 +2347,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f949dd6e4c9669149be57a96eed032cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  viewModelPropertyName: AbilityDesigner.IDText
+  viewModelPropertyName: AbilityListViewModel.IDText
   viewEventName: UnityEngine.UI.InputField.onValueChanged
   viewPropertyName: UnityEngine.UI.InputField.text
   viewAdapterTypeName: UnityWeld.Binding.Adapters.IntToStringAdapter
@@ -2370,8 +2368,9 @@ GameObject:
   - component: {fileID: 1625793313}
   - component: {fileID: 1625793312}
   - component: {fileID: 1625793311}
+  - component: {fileID: 1625793310}
   m_Layer: 5
-  m_Name: ScrollPanel
+  m_Name: AbilityScrollPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2396,6 +2395,20 @@ RectTransform:
   m_AnchoredPosition: {x: -480.17, y: 0}
   m_SizeDelta: {x: -960.35, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1625793310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1625793308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8eb2db0e9d25c24aaeb1dea62383af8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilityPrefab: {fileID: 1197003803135320, guid: 0fb75e13ffef59c429c37d3bbf956a86,
+    type: 2}
+  abilityListPanel: {fileID: 7378962}
 --- !u!114 &1625793311
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2509,7 +2522,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffb4c79f31e0a234aa7e489b33e1783b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  viewModelMethodName: AbilityDesigner.AddNewAbility
+  viewModelMethodName: AbilityListViewModel.AddNewAbility
   viewEventName: UnityEngine.UI.Button.onClick
 --- !u!114 &1629727860
 MonoBehaviour:
@@ -2731,7 +2744,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f949dd6e4c9669149be57a96eed032cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  viewModelPropertyName: AbilityDesigner.NameText
+  viewModelPropertyName: AbilityListViewModel.NameText
   viewEventName: UnityEngine.UI.InputField.onValueChanged
   viewPropertyName: UnityEngine.UI.InputField.text
   viewAdapterTypeName: 
