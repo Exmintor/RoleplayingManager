@@ -1,0 +1,19 @@
+[
+  {
+    "$type": "GenericAbility, Assembly-CSharp",
+    "ID": 1,
+    "Name": "GenericAbility",
+    "ImageFilePath": "GenericAbility",
+    "Description": "This is a generic ability",
+    "Cooldown": 0.0
+  },
+  {
+    "$type": "GenericChanneled, Assembly-CSharp",
+    "ChannelTime": 0.0,
+    "ID": 100,
+    "Name": "GenericChanneled",
+    "ImageFilePath": "GenericChanneled",
+    "Description": "This is a generic channeled ability test",
+    "Cooldown": 0.0
+  }
+]
