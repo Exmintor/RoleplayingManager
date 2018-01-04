@@ -2,18 +2,114 @@
   {
     "$type": "GenericAbility, Assembly-CSharp",
     "ID": 1,
-    "Name": "GenericAbility",
-    "ImageFilePath": "GenericAbility",
-    "Description": "This is a generic ability",
-    "Cooldown": 0.0
+    "Name": "Basic Attack",
+    "ImageFilePath": "basic attack",
+    "Description": "Default melee attack.",
+    "Cooldown": 1.0
+  },
+  {
+    "$type": "GenericAbility, Assembly-CSharp",
+    "ID": 2,
+    "Name": "Single Target Melee",
+    "ImageFilePath": "single target melee",
+    "Description": "Default attack + dmg mod",
+    "Cooldown": 5.0
+  },
+  {
+    "$type": "GenericAbility, Assembly-CSharp",
+    "ID": 3,
+    "Name": "Single Target Ranged",
+    "ImageFilePath": "single target ranged",
+    "Description": "Default ranged attack.",
+    "Cooldown": 5.0
+  },
+  {
+    "$type": "GenericAbility, Assembly-CSharp",
+    "ID": 4,
+    "Name": "Melee Cleave",
+    "ImageFilePath": "melee cleave",
+    "Description": "Melee hits 2 characters.",
+    "Cooldown": 5.0
+  },
+  {
+    "$type": "GenericAbility, Assembly-CSharp",
+    "ID": 5,
+    "Name": "Cleave Ranged",
+    "ImageFilePath": "cleave ranged",
+    "Description": "Hits 2 characters from afar.",
+    "Cooldown": 5.0
+  },
+  {
+    "$type": "GenericAbility, Assembly-CSharp",
+    "ID": 6,
+    "Name": "Poison/DoT",
+    "ImageFilePath": "poisondot",
+    "Description": "Periodically does damage.",
+    "Cooldown": 6.0
+  },
+  {
+    "$type": "GenericAbility, Assembly-CSharp",
+    "ID": 7,
+    "Name": "Heal",
+    "ImageFilePath": "heal",
+    "Description": "Periodically increases an ally's health. Channelled over 4 seconds.",
+    "Cooldown": 4.0
+  },
+  {
+    "$type": "GenericAbility, Assembly-CSharp",
+    "ID": 8,
+    "Name": "Shield",
+    "ImageFilePath": "shield",
+    "Description": "Shields a single ally from damage.",
+    "Cooldown": 5.0
+  },
+  {
+    "$type": "GenericAbility, Assembly-CSharp",
+    "ID": 9,
+    "Name": "Sacrifice/Guard",
+    "ImageFilePath": "sacrificeguard",
+    "Description": "Shares 50% of all damage taken by an ally.",
+    "Cooldown": 8.0
+  },
+  {
+    "$type": "GenericAbility, Assembly-CSharp",
+    "ID": 10,
+    "Name": "Buff",
+    "ImageFilePath": "buff",
+    "Description": "Increases an ally's attribute.",
+    "Cooldown": 8.0
+  },
+  {
+    "$type": "GenericAbility, Assembly-CSharp",
+    "ID": 11,
+    "Name": "Debuff",
+    "ImageFilePath": "debuff",
+    "Description": "Weakens an opponent during the duration.",
+    "Cooldown": 6.0
+  },
+  {
+    "$type": "GenericAbility, Assembly-CSharp",
+    "ID": 12,
+    "Name": "Interrupt",
+    "ImageFilePath": "interrupt",
+    "Description": "Interrupts an opponents channelled ability.",
+    "Cooldown": 10.0
   },
   {
     "$type": "GenericChanneled, Assembly-CSharp",
     "ChannelTime": 0.0,
     "ID": 100,
-    "Name": "GenericChanneled",
-    "ImageFilePath": "GenericChanneled",
-    "Description": "This is a generic channeled ability test",
+    "Name": "Esuna/Cleanse",
+    "ImageFilePath": "esunacleanse",
+    "Description": "Removes an ally's Poison/DoT. Channelled over 4 seconds.",
+    "Cooldown": 8.0
+  },
+  {
+    "$type": "GenericAbility, Assembly-CSharp",
+    "ID": 120,
+    "Name": "GenericAbility",
+    "ImageFilePath": "GenericAbility",
+    "Description": "This is a generic ability",
     "Cooldown": 0.0
   }
 ]

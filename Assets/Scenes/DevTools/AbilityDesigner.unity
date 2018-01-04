@@ -180,7 +180,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'ID:'
+  m_Text: 'ID: Shield'
 --- !u!222 &21228694
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1122,7 +1122,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Name:'
+  m_Text: 'Name: Shield'
 --- !u!222 &655238791
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1287,7 +1287,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Cooldown:'
+  m_Text: 'Cooldown: 5 sec'
 --- !u!222 &946527849
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2110,7 +2110,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Description:'
+  m_Text: 'Description: Shields a person from damage.'
 --- !u!222 &1333837376
 CanvasRenderer:
   m_ObjectHideFlags: 0
