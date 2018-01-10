@@ -2,18 +2,170 @@
   {
     "$type": "GenericAbility, Assembly-CSharp",
     "ID": 1,
-    "Name": "GenericAbility",
-    "ImageFilePath": "GenericAbility",
-    "Description": "This is a generic ability",
-    "Cooldown": 0.0
+    "Name": "Basic Attack",
+    "ImageFilePath": "basic attack",
+    "Description": "Default melee attack.",
+    "Cooldown": 1.0
+  },
+  {
+    "$type": "GenericAbility, Assembly-CSharp",
+    "ID": 19,
+    "Name": "Weaken",
+    "ImageFilePath": "weaken",
+    "Description": "Target does 30% less damage over the next 4 seconds.",
+    "Cooldown": 8.0
+  },
+  {
+    "$type": "GenericAbility, Assembly-CSharp",
+    "ID": 2,
+    "Name": "Single Target Melee",
+    "ImageFilePath": "single target melee",
+    "Description": "Default attack + dmg mod",
+    "Cooldown": 5.0
+  },
+  {
+    "$type": "GenericAbility, Assembly-CSharp",
+    "ID": 3,
+    "Name": "Single Target Ranged",
+    "ImageFilePath": "single target ranged",
+    "Description": "Default ranged attack.",
+    "Cooldown": 5.0
+  },
+  {
+    "$type": "GenericAbility, Assembly-CSharp",
+    "ID": 4,
+    "Name": "Melee Cleave",
+    "ImageFilePath": "melee cleave",
+    "Description": "Melee hits 2 characters.",
+    "Cooldown": 5.0
+  },
+  {
+    "$type": "GenericAbility, Assembly-CSharp",
+    "ID": 5,
+    "Name": "Cleave Ranged",
+    "ImageFilePath": "cleave ranged",
+    "Description": "Hits 2 characters from afar.",
+    "Cooldown": 5.0
+  },
+  {
+    "$type": "GenericAbility, Assembly-CSharp",
+    "ID": 6,
+    "Name": "Poison/DoT",
+    "ImageFilePath": "poisondot",
+    "Description": "Periodically does damage.",
+    "Cooldown": 6.0
+  },
+  {
+    "$type": "GenericAbility, Assembly-CSharp",
+    "ID": 7,
+    "Name": "Heal",
+    "ImageFilePath": "heal",
+    "Description": "Periodically increases an ally's health. Channelled over 4 seconds.",
+    "Cooldown": 4.0
+  },
+  {
+    "$type": "GenericAbility, Assembly-CSharp",
+    "ID": 8,
+    "Name": "Shield",
+    "ImageFilePath": "shield",
+    "Description": "Shields a single ally from damage.",
+    "Cooldown": 5.0
+  },
+  {
+    "$type": "GenericAbility, Assembly-CSharp",
+    "ID": 9,
+    "Name": "Sacrifice/Guard",
+    "ImageFilePath": "sacrificeguard",
+    "Description": "Shares 50% of all damage taken by an ally.",
+    "Cooldown": 8.0
+  },
+  {
+    "$type": "GenericAbility, Assembly-CSharp",
+    "ID": 10,
+    "Name": "Buff",
+    "ImageFilePath": "buff",
+    "Description": "Increases an ally's attribute.",
+    "Cooldown": 8.0
+  },
+  {
+    "$type": "GenericAbility, Assembly-CSharp",
+    "ID": 11,
+    "Name": "Debuff",
+    "ImageFilePath": "debuff",
+    "Description": "Weakens an opponent during the duration.",
+    "Cooldown": 6.0
+  },
+  {
+    "$type": "GenericAbility, Assembly-CSharp",
+    "ID": 12,
+    "Name": "Interrupt",
+    "ImageFilePath": "interrupt",
+    "Description": "Interrupts an opponents channelled ability.",
+    "Cooldown": 10.0
+  },
+  {
+    "$type": "GenericAbility, Assembly-CSharp",
+    "ID": 13,
+    "Name": "Silence",
+    "ImageFilePath": "silence",
+    "Description": "Prevents target from casting spells for 3 seconds. Can also interrupt.",
+    "Cooldown": 12.0
+  },
+  {
+    "$type": "GenericAbility, Assembly-CSharp",
+    "ID": 14,
+    "Name": "Confuse",
+    "ImageFilePath": "confuse",
+    "Description": "Target can't identify friend from foe for 3 seconds.",
+    "Cooldown": 15.0
+  },
+  {
+    "$type": "GenericAbility, Assembly-CSharp",
+    "ID": 15,
+    "Name": "Demoralize",
+    "ImageFilePath": "demoralize",
+    "Description": "Target receives 30% more damage over the next 3 seconds.",
+    "Cooldown": 12.0
+  },
+  {
+    "$type": "GenericAbility, Assembly-CSharp",
+    "ID": 16,
+    "Name": "Rampage",
+    "ImageFilePath": "rampage",
+    "Description": "An ally receives a 40% attack speed increase for the next 4 seconds.",
+    "Cooldown": 12.0
+  },
+  {
+    "$type": "GenericAbility, Assembly-CSharp",
+    "ID": 17,
+    "Name": "Flurry",
+    "ImageFilePath": "flurry",
+    "Description": "Character does 4 attacks in quick succession.",
+    "Cooldown": 14.0
+  },
+  {
+    "$type": "GenericAbility, Assembly-CSharp",
+    "ID": 18,
+    "Name": "Reflect",
+    "ImageFilePath": "reflect",
+    "Description": "Character reflects all attacks against him over the next 3 seconds.",
+    "Cooldown": 10.0
   },
   {
     "$type": "GenericChanneled, Assembly-CSharp",
     "ChannelTime": 0.0,
     "ID": 100,
-    "Name": "GenericChanneled",
-    "ImageFilePath": "GenericChanneled",
-    "Description": "This is a generic channeled ability test",
+    "Name": "Esuna/Cleanse",
+    "ImageFilePath": "esunacleanse",
+    "Description": "Removes an ally's Poison/DoT. Channelled over 4 seconds.",
+    "Cooldown": 8.0
+  },
+  {
+    "$type": "GenericAbility, Assembly-CSharp",
+    "ID": 120,
+    "Name": "GenericAbility",
+    "ImageFilePath": "GenericAbility",
+    "Description": "This is a generic ability",
     "Cooldown": 0.0
   }
 ]
