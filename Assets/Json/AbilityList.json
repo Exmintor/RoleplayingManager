@@ -4,7 +4,7 @@
     "ID": 1,
     "Name": "Basic Attack",
     "ImageFilePath": "basic attack",
-    "Description": "Default melee attack.",
+    "Description": "Default melee attack. Deals 5 physical damage to a single target.",
     "Cooldown": 1.0
   },
   {
@@ -12,7 +12,7 @@
     "ID": 19,
     "Name": "Weaken",
     "ImageFilePath": "weaken",
-    "Description": "Target does 30% less damage over the next 4 seconds.",
+    "Description": "Target deals 30% less damage over the next 4 seconds.",
     "Cooldown": 8.0
   },
   {
@@ -20,7 +20,7 @@
     "ID": 2,
     "Name": "Single Target Melee",
     "ImageFilePath": "single target melee",
-    "Description": "Default attack + dmg mod",
+    "Description": "Deals 50 physical damage to a single target.",
     "Cooldown": 5.0
   },
   {
@@ -28,7 +28,7 @@
     "ID": 3,
     "Name": "Single Target Ranged",
     "ImageFilePath": "single target ranged",
-    "Description": "Default ranged attack.",
+    "Description": "Deals 50 ranged damage to a single target.",
     "Cooldown": 5.0
   },
   {
@@ -36,7 +36,7 @@
     "ID": 4,
     "Name": "Melee Cleave",
     "ImageFilePath": "melee cleave",
-    "Description": "Melee hits 2 characters.",
+    "Description": "Deals 35 physical damage to two separate targets.",
     "Cooldown": 5.0
   },
   {
@@ -44,7 +44,7 @@
     "ID": 5,
     "Name": "Cleave Ranged",
     "ImageFilePath": "cleave ranged",
-    "Description": "Hits 2 characters from afar.",
+    "Description": "Deals 35 ranged damage to two separate targets.",
     "Cooldown": 5.0
   },
   {
@@ -52,7 +52,7 @@
     "ID": 6,
     "Name": "Poison/DoT",
     "ImageFilePath": "poisondot",
-    "Description": "Periodically does damage.",
+    "Description": "Inflicts a poison status effect on an enemy which deals 1 damage per second. This effect stacks.",
     "Cooldown": 6.0
   },
   {
@@ -60,7 +60,7 @@
     "ID": 7,
     "Name": "Heal",
     "ImageFilePath": "heal",
-    "Description": "Periodically increases an ally's health. Channelled over 4 seconds.",
+    "Description": "Increases an ally's health by 16 every second. Channelled over 4 seconds.",
     "Cooldown": 4.0
   },
   {
@@ -68,7 +68,7 @@
     "ID": 8,
     "Name": "Shield",
     "ImageFilePath": "shield",
-    "Description": "Shields a single ally from damage.",
+    "Description": "Shields a single ally from 40 damage.",
     "Cooldown": 5.0
   },
   {
@@ -76,7 +76,7 @@
     "ID": 9,
     "Name": "Sacrifice/Guard",
     "ImageFilePath": "sacrificeguard",
-    "Description": "Shares 50% of all damage taken by an ally.",
+    "Description": "Shares 50% of all damage taken by an ally for X seconds.",
     "Cooldown": 8.0
   },
   {
